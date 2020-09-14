@@ -33,7 +33,7 @@ jobs:
       with:
         nuget-version: ${{ env.NUGET_VERSION}}
     - name: NuGet to restore dependencies as well as project-specific tools that are specified in the project file
-      run: nuget restore .\PartsUnlimited.sln
+      run: nuget restore .\PartsUnlimited-aspnet45\PartsUnlimited.sln
   
     - name: Add msbuild to PATH
       uses: microsoft/setup-msbuild@v1.0.0
