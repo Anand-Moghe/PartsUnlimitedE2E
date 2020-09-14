@@ -18,7 +18,7 @@ on:
 env:
   AZURE_WEBAPP_NAME: partsunlimited-web-dev    # set this to your application's name
   AZURE_WEBAPP_PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root
-  NUGET_VERSION: '4.7.0'           # set this to the dot net version to use
+  NUGET_VERSION: '5.3.1'           # set this to the dot net version to use
 
 jobs:
   build-and-deploy:
@@ -38,7 +38,7 @@ jobs:
     - name: Add msbuild to PATH
       uses: microsoft/setup-msbuild@v1.0.0
       with:
-        vs-version: "[16.4,16.5]"  #Version of Visual Studio to search; defaults to latest if not specified
+        vs-version: "[16.5,16.6,16.7]"  #Version of Visual Studio to search; defaults to latest if not specified
 
     - name: Run MSBuild
       run: msbuild .\PartsUnlimited-aspnet45\PartsUnlimited.sln
