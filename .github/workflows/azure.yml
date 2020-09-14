@@ -17,7 +17,7 @@ on:
 # 2. Change these variables for your configuration:
 env:
   AZURE_WEBAPP_NAME: partsunlimited-web-dev    # set this to your application's name
-  AZURE_WEBAPP_PACKAGE_PATH: '.\src\PartsUnlimitedWebsite'      # set this to the path to your web app project, defaults to the repository root
+  AZURE_WEBAPP_PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root
   NUGET_VERSION: '5.6.0'           # set this to the dot net version to use
 
 jobs:
@@ -33,7 +33,7 @@ jobs:
       with:
         nuget-version: ${{ env.NUGET_VERSION}}
     - name: NuGet to restore dependencies as well as project-specific tools that are specified in the project file
-      run: nuget restore
+      run: nuget restore .\PartsUnlimited.sln
   
     - name: Add msbuild to PATH
       uses: microsoft/setup-msbuild@v1.0.0
