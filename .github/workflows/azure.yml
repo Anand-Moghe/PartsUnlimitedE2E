@@ -41,7 +41,7 @@ jobs:
       #  vs-version: "[16.4,16.5]"  #Version of Visual Studio to search; defaults to latest if not specified
 
     - name: Run MSBuild
-      run: msbuild .\PartsUnlimited-aspnet45\PartsUnlimited.sln
+      run: msbuild .\PartsUnlimited-aspnet45\src\PartsUnlimitedWebsite\PartsUnlimitedWebsite.csproj
        
     - name: 'Run Azure webapp deploy action using publish profile credentials'
       uses: azure/webapps-deploy@v2
